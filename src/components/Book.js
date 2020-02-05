@@ -4,10 +4,11 @@ const Book = (props) => {
     
     return (
         <tr>
-            <th scope="row">{props.book.id}</th>
+            <th scope="row">{props.id}</th>
             <td>{props.book.title}</td>
             <td>{props.book.rading}</td>
-            <td><button className="btn btn-success mr-2">Edit</button><button className="btn btn-danger">Delete</button></td>
+            <td><button className="btn btn-success mr-2" data-key={props.id} onClick={props.edit}>Edit</button>
+            <button className="btn btn-danger" data-key={props.id} onClick={props.delete}>Delete</button></td>
         </tr>
     );
 }
