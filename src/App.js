@@ -30,15 +30,8 @@ class App extends React.Component {
       editRading: "",
       modalIsOpen: false,
       modalIsOpenEdit: false,
-      books: [
-        // {title: "javaScript", rading: 5.4},
-        // {title: "VueJs", rading: 2.4},
-        // {title: "HTML&CSS", rading: 4.4}
-      ]
+      books: []
     };
-
-    // this.editTitle="";
-    // this.editRading="";
 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -148,10 +141,6 @@ class App extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {/* {this.state.books.map((book, ind) => {
-              return <Book id={ind+1} book= {book} key={ind} delete={this.deleteBook} edit={this.openModalEdit}/> 
-            } )} */}
-
             {listItems}
           </tbody>
         </table>
