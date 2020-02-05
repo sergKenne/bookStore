@@ -31,18 +31,14 @@ class App extends React.Component {
       modalIsOpen: false,
       modalIsOpenEdit: false,
       books: [
-        {title: "javaScript", rading: 5.4},
-        {title: "VueJs", rading: 2.4},
-        {title: "HTML&CSS", rading: 4.4}
+        // {title: "javaScript", rading: 5.4},
+        // {title: "VueJs", rading: 2.4},
+        // {title: "HTML&CSS", rading: 4.4}
       ]
     };
 
-    this.editTitle="";
-    this.editRading="";
-
-    // this.editTitleInput = React.createRef();
-    // this.editRadingInput = React.createRef();
-
+    // this.editTitle="";
+    // this.editRading="";
 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -132,9 +128,11 @@ class App extends React.Component {
     
   render() {
 
-    // const listItems = this.state.books? this.state.books.map((book, ind) => {
-    //   return <Book id={ind+1} book= {book} key={ind} delete={this.deleteBook} edit={this.openModalEdit}/> 
-    // } ) : <div>your books app is empty</div>;
+    const listItems = this.state.books.length? this.state.books.map((book, ind) => {
+      return <Book id={ind+1} book= {book} key={ind} delete={this.deleteBook} edit={this.openModalEdit}/> 
+    } ) : (<tr className="bg-info ">
+      <td className="text-center text-white h5" colSpan="4">your books app is empty</td>
+    </tr>);
 
     return (
       <div className="App container">
@@ -150,11 +148,11 @@ class App extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.books.map((book, ind) => {
+            {/* {this.state.books.map((book, ind) => {
               return <Book id={ind+1} book= {book} key={ind} delete={this.deleteBook} edit={this.openModalEdit}/> 
-            } )}
+            } )} */}
 
-            {/* {listItems} */}
+            {listItems}
           </tbody>
         </table>
         
